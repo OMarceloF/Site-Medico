@@ -1,9 +1,9 @@
 :root {
-  --main-black: #000c2c;
+  --main-black: #034447;
   --main-white: white;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   padding: 0;
@@ -12,19 +12,20 @@
 }
 
 body {
-  color: #000c2c;
-  font-family: "Merriweather", serif;
+  color: #034447;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--main-white);
 }
 
 .navbar {
-  background-color: transparent;
+  background-color: white;
 }
 
 .nav-link {
   color: var(--main-black);
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
   border-bottom: 1rem;
   border-color: transparent;
@@ -63,11 +64,16 @@ body {
 
 .main {
   background: url(./Imagens/fotodeFundo.jpg) no-repeat;
-  background-color: white;
   background-size: contain;
   background-position: right;
+  background-clip: border-box;
   width: 100%;
   height: 88vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.textoPrincipal {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -95,6 +101,11 @@ h1 {
   font-size: 2.5rem;
 }
 
+.about {
+  background-color: #034447;
+  color: white;
+}
+
 .about img {
   height: 600px;
 }
@@ -108,34 +119,32 @@ h1 {
   height: 40px;
   width: 145px;
   outline: none;
-  border: none;
+  border: 1px solid var(--main-white);
   background-color: var(--main-black);
   color: var(--main-white);
   border-radius: 4px;
 }
 
 .btn1:hover {
-  background-color: transparent;
-  color: var(--main-black);
-  border: 1px solid var(--main-black);
+  scale: 1.1;
   transition: 0.5s;
+  margin-right: 1rem;
 }
 
 .btn2 {
   height: 40px;
   width: 145px;
   outline: none;
-  border: 1px solid var(--main-black);
+  border: 1px solid var(--main-white);
   background-color: transparent;
-  color: var(--main-black);
+  color: var(--main-white);
   border-radius: 4px;
 }
 
 .btn2:hover {
-  background-color: var(--main-black);
-  color: var(--main-white);
-  border: 1px solid transparent;
+  scale: 1.1;
   transition: 0.5s;
+  margin-left: 1rem;
 }
 
 .card {
@@ -148,6 +157,10 @@ h1 {
 
 .card p {
   color: gray;
+}
+
+.services {
+  background-color: white;
 }
 
 .services img {
@@ -167,6 +180,11 @@ h1 {
 
 .item {
   position: relative;
+  margin: 0.5rem;
+}
+
+.item img {
+  height: 200px;
 }
 
 .item:hover {
@@ -203,6 +221,11 @@ h1 {
   position: absolute;
 }
 
+.portfolio {
+  background-color: #034447;
+  color: white;
+}
+
 .item:hover:before {
   opacity: 1;
   transition: 0.3s;
@@ -236,30 +259,62 @@ footer {
 }
 
 .whatsapp-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   position: fixed;
   bottom: 40px;
   right: 40px;
+  width: 250px;
+  height: 60px;
+  background-color: #25d366;
   z-index: 9999;
+  border-radius: 10px;
+}
+
+.whatsapp-button a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  text-align: center;
+}
+
+.whatsapp-button p {
+  margin-left: 10px;
+  font-size: 1.1rem;
 }
 
 .whatsapp-button img {
+  border-color: transparent;
   display: block;
   width: 60px;
   height: 60px;
+  border-radius: 10px;
   background-color: #25d366;
-  border-radius: 50%;
   padding: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-}
-
-.whatsapp-button:hover img {
-  width: 80px;
-  height: 80px;
 }
 
 .whatsapp-button:hover {
   bottom: 30px;
   right: 30px;
+}
+
+.whatsapp-text {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 1050px) {
+  .item {
+    width: 300px;
+  }
+  .ftPerfil {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 950px) {
@@ -268,19 +323,77 @@ footer {
     height: 70vh;
     padding-top: 0;
   }
+  .item {
+    width: 97%;
+  }
+  .item img {
+    width: 100%;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .ftPerfil {
-    visibility: hidden;
+    margin: 0;
   }
-  .navbar > .container,
-  .navbar > .container-fluid,
-  .navbar > .container-lg,
-  .navbar > .container-md,
-  .navbar > .container-sm,
-  .navbar > .container-xl,
-  .navbar > .container-xxl {
-    flex-wrap: nowrap;
+  .item {
+    width: 600px;
+  }
+  .item img {
+    width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ftPerfil {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main {
+    background-size: auto;
+  }
+  .main h3 {
+    font-size: 3.4rem;
+  }
+  .textoPrincipal {
+    padding: 0px;
+  }
+  .navbar-brand img {
+    height: 75px;
+  }
+  .ftPerfil {
+    width: 75px;
+    height: 75px;
+    margin-left: 50px;
+  }
+  .item {
+    width: 97%;
+  }
+  .item img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .ftPerfil {
+    margin-left: 100px;
+  }
+  .main h3 {
+    font-size: 2.9rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+  .ftPerfil {
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+  }
+  .main h3 {
+    font-size: 2.4rem;
   }
 }
